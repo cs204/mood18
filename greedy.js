@@ -4,7 +4,9 @@ testGreedy(items, 20, cmpDencity)
 
 function cmpDencity(itemA, itemB)
 {
-	const r = //здесь вам надо задать сравнение по удельной цене 
+	const r1 = itemA.value / itemA.weight;
+    const r2 = itemB.value / itemB.weight;
+	const r = r1 - r2
 	return r
 }
 
@@ -44,11 +46,11 @@ function buildItems()
 	for (let i = 0; i < values.length; i++)
 	{
 		items.push({
-			name:names[i], 
-			value: values[i], 
+			name:names[i],
+			value: values[i],
 			weight: weights[i]
 		})
-	} 
+	}
 	return items
 }
 
